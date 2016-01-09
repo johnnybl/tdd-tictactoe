@@ -14,7 +14,7 @@ describe("Demonstrating webdriver promises", function() {
     });
 
     it("I open the blog website", function() {
-        return driver.get("http://www.scottlogic.com/blog");
+        return driver.get("http://www.scottlogic.com/blog/");
     });
 
     it("The title is 'Scott Logic Blog'", function() {

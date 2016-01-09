@@ -1,5 +1,3 @@
-//import {ADD_MOVE} from 'actionTypes'
-import {combineReducers} from 'redux'
 import 'isomorphic-fetch'
 
 
@@ -37,9 +35,5 @@ function currentPlayer(state = initialState.currentPlayer, action) {
     }
 }
 
-const ticTacToeApp = combineReducers({
-    moves,
-    currentPlayer
-});
 
-export default ticTacToeApp;
+export default moves;

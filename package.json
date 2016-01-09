@@ -4,6 +4,7 @@
   "description": "tic tac toe game in react",
   "scripts": {
     "start": "node server.js",
+    "build": "webpack --watch",
     "test": "npm run test:unit && npm run test:automation",
     "test:automation": "node_modules/.bin/mocha --timeout 15000 --compilers js:babel-core/register  test-automation",
     "test:unit": "node_modules/.bin/mocha --timeout 15000 --compilers js:babel-core/register  --require ./test/test_helper.js --recursive",
@@ -38,20 +39,22 @@
     "eslint": "1.10.3",
     "eslint-loader": "1.1.1",
     "exports-loader": "^0.6.2",
+    "file-loader": "^0.8.5",
     "imports-loader": "^0.6.5",
     "mocha": "^2.3.4",
     "selenium-webdriver": "^2.48.2",
     "sinon": "^1.17.2",
     "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "body-parser": "1.14.2",
     "bootstrap": "^3.3.6",
-    "isomorphic-fetch": "^2.2.0",
-    "knockout": "3.4.0",
     "es6-promise": "3.0.2",
     "express": "4.13.3",
-    "body-parser": "1.14.2"
+    "isomorphic-fetch": "^2.2.0",
+    "knockout": "3.4.0"
   }
 }
