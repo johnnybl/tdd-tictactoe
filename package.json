@@ -6,7 +6,7 @@
     "start": "node server.js",
     "build": "webpack --watch",
     "test": "npm run test:unit && npm run test:automation",
-    "test:automation": "node_modules/.bin/mocha --timeout 15000 --compilers js:babel-core/register  test-automation",
+    "test:automation": "webpack && phantomjs dist/bundle.js",
     "test:unit": "node_modules/.bin/mocha --timeout 15000 --compilers js:babel-core/register  --require ./test/test_helper.js --recursive",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint src"
@@ -42,6 +42,9 @@
     "file-loader": "^0.8.5",
     "imports-loader": "^0.6.5",
     "mocha": "^2.3.4",
+    "mocha-loader": "^0.7.1",
+    "mocha-phantomjs": "^4.0.2",
+    "phantomjs": "^1.9.19",
     "selenium-webdriver": "^2.48.2",
     "sinon": "^1.17.2",
     "style-loader": "^0.13.0",

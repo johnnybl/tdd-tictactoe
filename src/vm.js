@@ -2,7 +2,7 @@ import ko from 'knockout';
 import 'whatwg-fetch'
 
 export default function(){
-
+console.warn("frick")
   let someText=ko.observable(10),
     click=()=>{
       fetch('/api')

@@ -1,14 +1,14 @@
 var path = require('path');
 var webpack = require('webpack');
+
 module.exports = {
     devtool: 'eval-cheap-module-source-map',
     entry: [
-        './src/index'
+        './test-automation/mochaPh'
     ],
     quiet: true,
     output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'test-bundle.js'
     },
     plugins: [
         new webpack.NoErrorsPlugin(),
@@ -17,7 +17,7 @@ module.exports = {
         })],
     module: {
         loaders: [
-            {test: /\.js$/, loaders: ['babel', 'eslint']},
+            {test: /\.js$/, loaders: ['babel', 'eslint'], exclude:['node_modules']},
             {test: /\.css$/, loader: 'style-loader!css-loader'},
             {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file"},
             {test: /\.(woff|woff2)$/, loader: "url?prefix=font/&limit=5000"},
