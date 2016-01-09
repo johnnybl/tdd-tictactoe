@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "tic tac toe game in react",
   "scripts": {
-    "start": "node server.js",
+    "start": "parallelshell \"node server.js\" \"webpack --watch\"",
     "build": "webpack --watch",
     "test": "npm run test:unit && npm run test:automation",
     "test:automation":"parallelshell \"npm start\" \"mocha --timeout 15000 --compilers js:babel-core/register  test-automation\" -w",
