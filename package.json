@@ -6,7 +6,7 @@
     "start": "node server.js",
     "build": "webpack --watch",
     "test": "npm run test:unit && npm run test:automation",
-    "test:automation": "webpack && phantomjs dist/bundle.js",
+    "test:automation":"parallelshell \"npm start\" \"mocha --timeout 15000 --compilers js:babel-core/register  test-automation\" -w",
     "test:unit": "node_modules/.bin/mocha --timeout 15000 --compilers js:babel-core/register  --require ./test/test_helper.js --recursive",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint src"
@@ -44,7 +44,9 @@
     "mocha": "^2.3.4",
     "mocha-loader": "^0.7.1",
     "mocha-phantomjs": "^4.0.2",
+    "parallelshell": "^2.0.0",
     "phantomjs": "^1.9.19",
+    "selenium-server": "^2.48.3",
     "selenium-webdriver": "^2.48.2",
     "sinon": "^1.17.2",
     "style-loader": "^0.13.0",
@@ -58,6 +60,7 @@
     "es6-promise": "3.0.2",
     "express": "4.13.3",
     "isomorphic-fetch": "^2.2.0",
-    "knockout": "3.4.0"
+    "knockout": "3.4.0",
+    "whatwg-fetch": "^0.10.1"
   }
 }

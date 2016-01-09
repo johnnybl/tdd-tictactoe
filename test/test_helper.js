@@ -1,4 +1,4 @@
 import chai from 'chai'
 
-chai.should();
+chai.expect();
 chai.use(require('chai-things'))
