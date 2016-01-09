@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var fs = require('fs');
+var morgan = require('morgan');
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -9,6 +10,7 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 app.use('/dist',express.static('dist'));
+app.use(morgan('dev'));
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());

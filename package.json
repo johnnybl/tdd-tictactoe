@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "tic tac toe game in react",
   "scripts": {
-    "start": "webpack && parallelshell \"node server.js\" \"webpack --watch\" \"open \"http://localhost:3000\"\"",
+    "start": "webpack && parallelshell \"node server.js\" \"webpack --watch\" \"open \"http://localhost:3000\"\" -v",
     "build": "webpack",
     "test": "npm run test:unit",
     "test:all": "npm run test:unit && npm run test:automation",
@@ -45,6 +45,7 @@
     "mocha": "^2.3.4",
     "mocha-loader": "^0.7.1",
     "mocha-phantomjs": "^4.0.2",
+    "morgan": "^1.6.1",
     "parallelshell": "^2.0.0",
     "phantomjs": "^1.9.19",
     "selenium-server": "^2.48.3",
