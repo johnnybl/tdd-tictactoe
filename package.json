@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "tic tac toe game in react",
   "scripts": {
-    "start": "parallelshell \"node server.js\" \"webpack --watch\"",
-    "build": "webpack --watch",
-    "test": "npm run test:unit && npm run test:automation",
-    "test:automation":"parallelshell \"npm start\" \"mocha --timeout 15000 --compilers js:babel-core/register  test-automation\" -w",
+    "start": "webpack && parallelshell \"node server.js\" \"webpack --watch\" \"open \"http://localhost:3000\"\"",
+    "build": "webpack",
+    "test": "npm run test:unit",
+    "test:all": "npm run test:unit && npm run test:automation",
+    "test:automation": "parallelshell \"node server.js\" \"mocha --timeout 15000 --compilers js:babel-core/register  test-automation\" -w",
     "test:unit": "node_modules/.bin/mocha --timeout 15000 --compilers js:babel-core/register  --require ./test/test_helper.js --recursive",
-    "test:watch": "npm run test -- --watch",
+    "test:watch": "npm run test:unit -- --watch",
     "lint": "eslint src"
   },
   "repository": {

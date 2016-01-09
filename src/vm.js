@@ -10,7 +10,7 @@ export default function () {
                     return res.json()
                 })
                 .then((res)=> {
-                    someText(someText() + res.text);
+                    someText(someText() +1000+ res.text);
                 })
         };
 
