@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
     devtool: 'eval-cheap-module-source-map',
     entry: [
-        './test-automation/mochaPh'
+        './test-automation/index'
     ],
     quiet: true,
     output: {

@@ -9,13 +9,13 @@
 <script src="../node_modules/chai/chai.js"></script>
 <script>
     mocha.ui('bdd');
-    mocha.reporter('html');
-    var expect = chai.expect;
+    expect = chai.expect;
+    console.log('expecting',expect);
 </script>
 <script src="../test-bundle.js"></script>
+
 <script>
-    if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
-    else { mocha.run(); }
+    mocha.run();
 </script>
 </body>
 </html>
