@@ -2,19 +2,39 @@ import {expect} from 'chai'
 
 import vm from '../src/vm'
 
+let g = {
+    cells: [null,null,null,null,null,null,null,null,null],
+    currentPlayer: "X",
+    firstMove:function(location){
+        this.cells[location]="X";
+        this.currentPlayer = "0"
+    }
+};
+
 describe('newGame', ()=> {
-    let game = [2]
-    describe('cells', ()=> {
-        it('have 1 cell', ()=> {
-            expect(game).to.have.length(1)
-        })
 
-        it('generates each cell with 2',()=>{
-            expect(game).to.all.deep.equal(2)
-        })
+    it("has 9 empty cells", () => {
+        expect(g.cells).to.have.length(9);
+    })
 
-        it('has text',()=>{
-            expect(vm().someText()).to.equal(10);
-        })
+    it("start with X as current player", () => {
+        expect(g.currentPlayer).to.equal("X");
+    })
+
+    it("has all cells empty", () => {
+        expect(g.cells).to.have.all.equal(null);
+    })
+
+})
+
+describe ("first player move", () => {
+    it("places first player token on desired location", () => {
+        g.firstMove(3);
+        expect(g.cells[3]).to.equal("X");
+    })
+
+    it("changes current player to Y", ()=>{
+        g.firstMove(3);
+        expect(g.currentPlayer).to.equal("0");
     })
 })
